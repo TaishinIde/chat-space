@@ -1,0 +1,52 @@
+.header
+  .header__log
+    グループを作成しました
+
+.contents
+  .contents__left
+    .contents__left__a
+      .contents__left__a__user-name
+        test-user
+      .contents__left__a__menu
+        .contents__left__a__menu__new-group
+        =link_to "/groups/new", class: "contents__left__a__menu__new-group" do
+          = fa_icon 'edit'
+        .contents__left__a__menu__edit
+        =link_to "/users/443/edit", class: "contents__left__a__menu__edit" do
+          = fa_icon 'cog'
+    .contents__left__b
+      .contents__left__b__group
+        .contents__left__b__group__group-name
+          グループ名
+        .contents__left__b__group__latest-message
+          最新のチャット
+  .contents__right
+    .contents__right__a
+      .contents__right__a__current-group
+        .contents__right__a__current-group__group-name
+          グループ名
+        .contents__right__a__current-group__member-list
+          Member: user-name
+      .contents__right__a__edit-btn
+        Edit
+    .contents__right__b
+      .contents__right__b__message
+        .contents__right__b__message__upper-info
+          .contents__right__b__message__upper-info__talker
+            test-user
+          .contents__right__b__message__upper-info__date
+            2019/9/10
+        .contents__right__b__message__text
+          チャット
+    .contents__right__c
+      .contents__right__c__new-message
+        .contents__right__c__new-message__text
+          .contents__right__c__new-message__text__text
+            Type a message
+          .contents__right__c__new-message__text__image
+            %label.contents__right__c__new-message__text__image{for: "hidden"}
+              %i.fa.fa-picture-o
+              %input.hidden{type: 'file', id:"hidden"}
+        .contents__right__c__new-message__send
+          .contents__right__c__new-message__send__text
+            Send
