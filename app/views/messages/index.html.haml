@@ -9,10 +9,10 @@
         test-user
       .contents__left__a__menu
         .contents__left__a__menu__new-group
-        =link_to "/groups/new", class: "contents__left__a__menu__new-group" do
+        =link_to "New Group", class: "contents__left__a__menu__new-group" do
           = fa_icon 'edit'
         .contents__left__a__menu__edit
-        =link_to "/users/443/edit", class: "contents__left__a__menu__edit" do
+        =link_to edit_user_path(current_user.id), class: "contents__left__a__menu__edit" do
           = fa_icon 'cog'
     .contents__left__b
       .contents__left__b__group
