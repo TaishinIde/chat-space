@@ -3,23 +3,7 @@
     グループを作成しました
 
 .contents
-  .contents__left
-    .contents__left__a
-      .contents__left__a__user-name
-        test-user
-      .contents__left__a__menu
-        .contents__left__a__menu__new-group
-        =link_to "New Group", class: "contents__left__a__menu__new-group" do
-          = fa_icon 'edit'
-        .contents__left__a__menu__edit
-        =link_to edit_user_path(current_user.id), class: "contents__left__a__menu__edit" do
-          = fa_icon 'cog'
-    .contents__left__b
-      .contents__left__b__group
-        .contents__left__b__group__group-name
-          グループ名
-        .contents__left__b__group__latest-message
-          最新のチャット
+  = render 'shared/side_bar'
   .contents__right
     .contents__right__a
       .contents__right__a__current-group
@@ -28,7 +12,7 @@
         .contents__right__a__current-group__member-list
           Member: user-name
       .contents__right__a__edit-btn
-        Edit
+        edit
     .contents__right__b
       .contents__right__b__message
         .contents__right__b__message__upper-info
