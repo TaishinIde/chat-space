@@ -22,15 +22,11 @@
             2019/9/10
         .contents__right__b__message__text
           チャット
-    .contents__right__c
-      .contents__right__c__new-message
-        .contents__right__c__new-message__text
-          .contents__right__c__new-message__text__text
-            Type a message
-          .contents__right__c__new-message__text__image
-            %label.contents__right__c__new-message__text__image{for: "hidden"}
-              %i.fa.fa-picture-o
-              %input.hidden{type: 'file', id:"hidden"}
-        .contents__right__c__new-message__send
-          .contents__right__c__new-message__send__text
-            Send
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
