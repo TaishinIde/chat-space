@@ -1,27 +1,25 @@
-.header
-  .header__log
-    グループを作成しました
+.wrapper
 
-.contents
   = render 'shared/side_bar'
-  .contents__right
-    .contents__right__a
-      .contents__right__a__current-group
-        .contents__right__a__current-group__group-name
+
+  .chat
+    .header
+      .left-header
+        .left-header__title
           グループ名
-        .contents__right__a__current-group__member-list
-          Member: user-name
-      .contents__right__a__edit-btn
-        edit
-    .contents__right__b
-      .contents__right__b__message
-        .contents__right__b__message__upper-info
-          .contents__right__b__message__upper-info__talker
-            test-user
-          .contents__right__b__message__upper-info__date
-            2019/9/10
-        .contents__right__b__message__text
-          チャット
+        %ul.left-header__members
+          Member：
+          %li.member
+            メンバー名
+          %li.member
+            メンバー名
+          %li.member
+            メンバー名
+      .right-header
+        .right-header__button
+          Edit
+    .messages
+      = render @messages
     .form
       = form_for [@group, @message] do |f|
         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
